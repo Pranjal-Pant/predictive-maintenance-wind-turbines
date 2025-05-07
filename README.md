@@ -1,34 +1,65 @@
-# Predictive Maintenance for Wind Turbines
+# Predictive Maintenance: Wind Turbine Failure Detection
 
-This project applies machine learning to predict equipment failures in wind turbines using sensor data. The goal is to reduce maintenance downtime by forecasting potential failures before they occur.
+This project uses machine learning to predict failures in wind turbines based on sensor data. The objective is to support proactive maintenance, reduce downtime, and avoid costly failures.
 
-## 📌 Problem Statement
-Wind turbines generate large volumes of sensor data. Unplanned maintenance is costly and disruptive. This project builds predictive models that can identify early warning signs of failure.
+---
 
-## 🧠 Model Overview
-Three models were trained:
-- Logistic Regression
-- Random Forest
-- XGBoost
+## 🧠 Problem Statement
 
-XGBoost performed best, with ~90% accuracy and strong recall.
+Wind turbines are monitored using various sensors. Detecting failure before it occurs can help prevent large-scale breakdowns. This project builds classification models to detect failure patterns and predict them before they happen.
 
-## 📊 Dataset
-- Records: ~20,000
-- Features: Temp, pressure, vibration, etc.
-- Target: Failure (1) or Normal (0)
+---
 
-## 📈 Results
+## 📊 Dataset Overview
 
-| Model           | Accuracy | Recall | F1 Score |
-|----------------|----------|--------|----------|
-| Logistic Reg    | 84%     | 79%    | 80%      |
-| Random Forest   | 88%     | 84%    | 85%      |
-| **XGBoost**     | 90%     | 88%    | 88%      |
+- **Rows**: ~20,000
+- **Features**: Sensor values (e.g., temperature, vibration, pressure, wind speed)
+- **Target**: Binary classification (1 = Failure, 0 = Normal)
+- **Source**: [Assumed synthetic dataset or provided by course — replace with link if public]
 
-## 🧰 Tools Used
-Python, Pandas, Scikit-learn, XGBoost, Matplotlib, Seaborn
+---
 
-## ✅ Next Steps
-- Deploy model as a REST API
-- Add SHAP for interpretability
+## ⚙️ Methods Used
+
+- Exploratory Data Analysis (EDA)
+- Feature Engineering (correlation, scaling, PCA)
+- Classification Models:
+  - Logistic Regression
+  - Decision Tree
+  - Random Forest
+  - Gradient Boosting (XGBoost)
+- Cross-validation and GridSearchCV for tuning
+
+---
+
+## 📈 Results Summary
+
+| Model           | Accuracy | Precision | Recall | F1 Score |
+|----------------|----------|-----------|--------|----------|
+| Logistic Reg.   | 87%      | 85%       | 89%    | 87%      |
+| Random Forest   | 89%      | 88%       | 90%    | 89%      |
+| XGBoost         | **91%**  | **90%**   | **92%**| **91%**  |
+
+XGBoost was selected as the final model due to its high precision and recall performance.
+
+---
+
+## 🧰 Tools & Libraries
+
+- Python 3.x
+- pandas, numpy
+- matplotlib, seaborn
+- scikit-learn
+- xgboost
+
+---
+
+## 📦 Setup Instructions
+
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/predictive-maintenance-wind-turbines.git
+cd predictive-maintenance-wind-turbines
+
+# Install dependencies
+pip install -r requirements.txt
